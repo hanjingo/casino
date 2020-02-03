@@ -1,0 +1,47 @@
+# 可执行文件
+*.exe
+*.exe~
+
+# Test binary, build with `go test -c`
+*.test
+
+# 日志和调试以及临时文件
+*.out
+*.log
+*.rdb
+*.apk
+*.DS_Store
+*.pdb
+*.idea
+*.vscode
+*.vs
+
+#一些二进制文件和文件夹
+
+#unity3d文件
+/Client/Temp/
+/Client/ProjectSettings
+/Client/Bin
+/Client/Library
+
+# Visual Studio / MonoDevelop generated
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+/*.sln
+*.user
+*.unityproj
+*.booproj
+
+# OS generated 
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
