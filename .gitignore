@@ -1,4 +1,4 @@
-# 可执行文件
+﻿# 可执行文件
 *.exe
 *.exe~
 
@@ -19,10 +19,10 @@
 #一些二进制文件和文件夹
 
 #unity3d文件
-/Client/Temp/
-/Client/ProjectSettings
-/Client/Bin
-/Client/Library
+/cli/Temp/
+/cli/ProjectSettings
+/cli/Bin
+/cli/Library
 
 # Visual Studio / MonoDevelop generated
 ExportedObj/
