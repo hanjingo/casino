@@ -1,8 +1,7 @@
-fileFormatVersion: 2
-guid: 675c84b4a0a08a94a815afd935d58119
-folderAsset: yes
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+{
+  "ver": "1.0.1",
+  "uuid": "5bab6480-56a7-45ce-9562-1f90ecf79e76",
+  "isSubpackage": false,
+  "subpackageName": "",
+  "subMetas": {}
+}
