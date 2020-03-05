@@ -1,0 +1,383 @@
+{
+    "GameName":"tp",
+    "Path":"/Users/hehanjing/program/gopath/src/github.com/hanjingo/casino/serv/games/tp",
+    "StartIndex":1000,
+    "Class":[
+        {
+            "Name":"RoomInfo",
+            "Desc":"房间信息",
+            "NoPrintId":true,
+            "ModelFileName":"util",
+            "Fields":[
+                ["房间id", "Id", "int64"],
+                ["房间状态", "Status", "int64"],
+                ["游戏id", "GameId", "int32"],
+                ["最大人数限制", "MaxPlayerNum", "int32"],
+                ["总回合数", "TotalTurn", "int32"],
+                ["筹码方案id", "ChipProjId", "uint32"]
+            ]
+        },
+        {
+            "Name":"PlayerInfo",
+            "Desc":"玩家信息",
+            "NoPrintId":true,
+            "ModelFileName":"util",
+            "Fields":[
+                ["玩家id", "Id", "int64"],
+                ["玩家状态", "Status", "uint32"],
+                ["座位号", "SeatNum", "uint32"],
+                ["名字", "Name", "string"],
+                ["分数", "Score", "int32"],
+                ["头像", "HeadImgUrl", "string"]
+            ]
+        },
+        {
+            "Name":"PlayerTotalSettleInfo",
+            "Desc":"玩家回合结算信息",
+            "NoPrintId":true,
+            "ModelFileName":"util",
+            "Fields":[
+                ["用户id", "UserId", "int64"],
+                ["头像", "HeadImgUrl", "string"],
+                ["用户名", "UserName", "string"],
+                ["标签", "Tag", "string"],
+                ["分数变更", "ChangeScore", "int32"]
+            ]
+        },
+        {
+            "Name":"PlayerTurnSettleInfo",
+            "Desc":"玩家回合结算信息",
+            "NoPrintId":true,
+            "ModelFileName":"util",
+            "Fields":[
+                ["用户id", "UserId", "int64"],
+                ["用户名", "UserName", "string"],
+                ["头像", "HeadImgUrl", "string"],
+                ["分数变更", "ChangeScore", "int32"],
+                ["是否是赢家", "IsWinner", "bool"],
+                ["牌集合", "Cards", "array", "int"]
+            ]
+        },
+        {
+            "Name":"JoinRoomReq",
+            "Desc":"进房请求",
+            "Fields":[
+                ["房间id", "RoomId", "int64"]
+            ]
+        },
+        {
+            "Name":"JoinRoomRsp",
+            "Desc":"进房返回",
+            "Fields":[
+                ["结果", "Result", "uint32"],
+                ["房间信息", "Room", "*", "RoomInfo"]
+            ]
+        },
+        {
+            "Name":"JoinRoomNtf",
+            "Desc":"进房广播",
+            "Fields":[
+                ["用户信息", "User", "*", "PlayerInfo"]
+            ]
+        },
+        {
+            "Name":"ExitRoomReq",
+            "Desc":"退房请求",
+            "Fields":[
+                ["房间id", "RoomId", "int64"]
+            ]
+        },
+        {
+            "Name":"ExitRoomRsp",
+            "Desc":"退房返回",
+            "Fields":[
+                ["结果", "Result", "uint32"]
+            ]
+        },
+        {
+            "Name":"ExitRoomNtf",
+            "Desc":"退房通知",
+            "Fields":[
+                ["用户id", "UserId", "int64"]
+            ]
+        },
+        {
+            "Name":"SitDownReq",
+            "Desc":"坐下请求",
+            "Fields":[
+                ["房间id", "RoomId", "int64"],
+                ["座位id", "SeatId", "uint32"]
+            ]
+        },
+        {
+            "Name":"SitDownRsp",
+            "Desc":"坐下返回",
+            "Fields":[
+                ["结果", "Result", "uint32"],
+                ["座位id", "SeatId", "uint32"]
+            ]
+        },
+        {
+            "Name":"SitDownNtf",
+            "Desc":"坐下通知",
+            "Fields":[
+                ["用户id", "UserId", "int64"],
+                ["座位id", "SeatId", "uint32"]
+            ]
+        },
+        {
+            "Name":"ReadyReq",
+            "Desc":"准备请求",
+            "Fields":[]
+        },
+        {
+            "Name":"ReadyRsp",
+            "Desc":"准备返回",
+            "Fields":[
+                ["结果", "Result", "uint32"]
+            ]
+        },
+        {
+            "Name":"ReadyNtf",
+            "Desc":"准备通知",
+            "Fields":[
+                ["用户id", "UserId", "int64"]
+            ]
+        },
+        {
+            "Name":"JiaZhuReq",
+            "Desc":"加注请求",
+            "Fields":[
+                ["凭证", "Token", "string"],
+                ["筹码id集合", "ChipIds", "array", "uint32"]
+            ]
+        },
+        {
+            "Name":"JiaZhuRsp",
+            "Desc":"加注返回",
+            "Fields":[
+                ["结果", "Result", "uint32"]
+            ]
+        },
+        {
+            "Name":"JiaZhuNtf",
+            "Desc":"加注通知",
+            "Fields":[
+                ["筹码id集合", "ChipIds", "array", "uint32"]
+            ]
+        },
+        {
+            "Name":"GenZhuReq",
+            "Desc":"跟注请求",
+            "Fields":[
+                ["凭证", "Token", "string"]
+            ]
+        },
+        {
+            "Name":"JiaZhuRsp",
+            "Desc":"加注返回",
+            "Fields":[
+                ["结果", "Result", "uint32"]
+            ]
+        },
+        {
+            "Name":"JiaZhuNtf",
+            "Desc":"加注通知",
+            "Fields":[
+                ["用户id", "UserId", "int64"]
+            ]
+        },
+        {
+            "Name":"QiPaiReq",
+            "Desc":"弃牌请求",
+            "Fields":[
+                ["凭证", "Token", "string"]
+            ]
+        },
+        {
+            "Name":"QiPaiRsp",
+            "Desc":"弃牌返回",
+            "Fields":[
+                ["结果", "Result", "uint32"]
+            ]
+        },
+        {
+            "Name":"QiPaiNtf",
+            "Desc":"弃牌通知",
+            "Fields":[
+                ["用户id", "UserId", "int64"]
+            ]
+        },
+        {
+            "Name":"BiPaiReq",
+            "Desc":"比牌请求",
+            "Fields":[
+                ["凭证", "Token", "string"]
+            ]
+        },
+        {
+            "Name":"BiPaiRsp",
+            "Desc":"比牌返回",
+            "Fields":[
+                ["结果", "Result", "uint32"],
+                ["赢家", "WinnerId", "int64"],
+                ["输家", "LoserId", "int64"]
+            ]
+        },
+        {
+            "Name":"BiPaiNtf",
+            "Desc":"弃牌通知",
+            "Fields":[
+                ["赢家", "WinnerId", "int64"],
+                ["输家", "LoserId", "int64"],
+                ["比牌发起人", "DoId", "int64"]
+            ]
+        },
+        {
+            "Name":"KanPaiReq",
+            "Desc":"看牌请求",
+            "Fields":[
+                ["凭证", "Token", "string"]
+            ]
+        },
+        {
+            "Name":"KanPaiRsp",
+            "Desc":"看牌返回",
+            "Fields":[
+                ["结果", "Result", "uint32"]
+            ]
+        },
+        {
+            "Name":"KanPaiRsp",
+            "Desc":"看牌通知",
+            "Fields":[
+                ["看牌人的id", "UserId", "int64"]
+            ]
+        },
+        {
+            "Name":"RoomCloseNtf",
+            "Desc":"房间关闭通知",
+            "Id":1100,
+            "Fields":[
+                ["房间id", "RoomId", "int64"],
+                ["房间状态", "Status", "uint32"]
+            ]
+        },
+        {
+            "Name":"ReturnSeatNtf",
+            "Desc":"位置归还通知",
+            "Fields":[
+                ["房间id", "RoomId", "int64"],
+                ["座位id", "SeatId", "uint32"],
+                ["用户id", "UserId", "int64"]
+            ]
+        },
+        {
+            "Name":"PutCardNtf",
+            "Desc":"发牌通知",
+            "Fields":[
+                ["座位id集合", "SeatIds", "Array", "int64"]
+            ]
+        },
+        {
+            "Name":"TotalSettleNtf",
+            "Desc":"总结算广播",
+            "Fields":[
+                ["房间id", "RoomId", "int64"],
+                ["总回合数", "TotalTurn", "int32"],
+                ["房间创建时间", "RoomCreateTime", "string"],
+                ["玩家结算信息", "Players", "*", "PlayerTotalSettleInfo"]
+            ]
+        },
+        {
+            "Name":"TurnSettleNtf",
+            "Desc":"回合结算广播",
+            "Fields":[
+                ["房间id", "RoomId", "int64"],
+                ["回合数", "TotalTurn", "int32"],
+                ["房间创建时间", "RoomCreateTime", "string"],
+                ["玩家结算信息", "Players", "*", "PlayerTurnSettleInfo"]
+            ]
+        },
+        {
+            "Name":"TurnEndNtf",
+            "Desc":"回合结束广播",
+            "Fields":[
+                ["房间id", "RoomId", "int64"],
+                ["当前回合", "TurnNum", "int32"]
+            ]
+        },
+        {
+            "Name":"TurnStartNtf",
+            "Desc":"回合开始广播",
+            "Fields":[
+                ["当前回合", "TurnNum", "int32"],
+                ["总回合", "TotalTurn", "int32"]
+            ]
+        },
+        {
+            "Name":"OffLineNtf",
+            "Desc":"掉线广播",
+            "Fields":[
+                ["玩家id", "UserId", "int64"]
+            ]
+        },
+        {
+            "Name":"ShowCardNtf",
+            "Desc":"亮牌广播",
+            "Fields":[
+                ["座位id", "SeatNum", "int32"],
+                ["牌集合", "Cards", "[]int32"]
+            ]
+        },
+        {
+            "Name":"UpdateReadyTimerNtf",
+            "Desc":"准备倒计时刷新",
+            "Id":1200,
+            "Fields":[
+                ["倒计时剩余", "TimeLeft", "int32"]
+            ]
+        },
+        {
+            "Name":"ReadyTimerCountDoneNtf",
+            "Desc":"准备倒计时结束",
+            "Fields":[]
+        },
+        {
+            "Name":"UpdateTurnSettleTimerNtf",
+            "Desc":"回合结算倒计时刷新",
+            "Fields":[
+                ["倒计时剩余", "TimeLeft", "int32"]
+            ]
+        },
+        {
+            "Name":"TurnSettleTimerCountDoneNtf",
+            "Desc":"回合结算倒计时结束",
+            "Fields":[]
+        },
+        {
+            "Name":"UpdatePutCardTimerNtf",
+            "Desc":"发牌倒计时刷新",
+            "Fields":[
+                ["倒计时剩余", "TimeLeft", "int32"]
+            ]
+        },
+        {
+            "Name":"PutCardTimerCountDoneNtf",
+            "Desc":"发牌倒计时结束",
+            "Fields":[]
+        },
+        {
+            "Name":"UpdatePlayerOpTimerNtf",
+            "Desc":"玩家操作倒计时刷新",
+            "Fields":[
+                ["倒计时剩余", "TimeLeft", "int32"]
+            ]
+        },
+        {
+            "Name":"PlayerOpTimerCountDoneNtf",
+            "Desc":"玩家操作倒计时结束",
+            "Fields":[]
+        }
+    ]
+}
