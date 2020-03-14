@@ -69,11 +69,6 @@ type JiaZhuReq struct {
 	ChipIds []uint32 //筹码id集合
 }
 
-//跟注请求
-type GenZhuReq struct {
-	Token string //凭证
-}
-
 //加注返回
 type JiaZhuRsp struct {
 	Result uint32 //结果
@@ -81,6 +76,21 @@ type JiaZhuRsp struct {
 
 //加注通知
 type JiaZhuNtf struct {
+	ChipIds []uint32 //筹码id集合
+}
+
+//跟注请求
+type GenZhuReq struct {
+	Token string //凭证
+}
+
+//跟注返回
+type GenZhuRsp struct {
+	Result uint32 //结果
+}
+
+//跟注通知
+type GenZhuNtf struct {
 	UserId int64 //用户id
 }
 
@@ -123,8 +133,13 @@ type KanPaiReq struct {
 	Token string //凭证
 }
 
-//看牌通知
+//看牌返回
 type KanPaiRsp struct {
+	Result uint32 //结果
+}
+
+//看牌通知
+type KanPaiNtf struct {
 	UserId int64 //看牌人的id
 }
 

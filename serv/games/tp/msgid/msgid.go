@@ -27,11 +27,15 @@ const (
 
     JiaZhuReq uint32 = 1013 //加注请求
 
+    JiaZhuRsp uint32 = 1014 //加注返回
+
+    JiaZhuNtf uint32 = 1015 //加注通知
+
     GenZhuReq uint32 = 1016 //跟注请求
 
-    JiaZhuRsp uint32 = 1017 //加注返回
+    GenZhuRsp uint32 = 1017 //跟注返回
 
-    JiaZhuNtf uint32 = 1018 //加注通知
+    GenZhuNtf uint32 = 1018 //跟注通知
 
     QiPaiReq uint32 = 1019 //弃牌请求
 
@@ -47,7 +51,9 @@ const (
 
     KanPaiReq uint32 = 1025 //看牌请求
 
-    KanPaiRsp uint32 = 1027 //看牌通知
+    KanPaiRsp uint32 = 1026 //看牌返回
+
+    KanPaiNtf uint32 = 1027 //看牌通知
 
     RoomCloseNtf uint32 = 1100 //房间关闭通知
 

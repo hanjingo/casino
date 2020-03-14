@@ -174,15 +174,15 @@
             ]
         },
         {
-            "Name":"JiaZhuRsp",
-            "Desc":"加注返回",
+            "Name":"GenZhuRsp",
+            "Desc":"跟注返回",
             "Fields":[
                 ["结果", "Result", "uint32"]
             ]
         },
         {
-            "Name":"JiaZhuNtf",
-            "Desc":"加注通知",
+            "Name":"GenZhuNtf",
+            "Desc":"跟注通知",
             "Fields":[
                 ["用户id", "UserId", "int64"]
             ]
@@ -248,7 +248,7 @@
             ]
         },
         {
-            "Name":"KanPaiRsp",
+            "Name":"KanPaiNtf",
             "Desc":"看牌通知",
             "Fields":[
                 ["看牌人的id", "UserId", "int64"]
