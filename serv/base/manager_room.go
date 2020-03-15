@@ -18,11 +18,16 @@ type RoomManager struct {
 	BRun bool
 }
 
-//初始化
-func (rm *RoomManager) Init() {
+//构造函数
+func (rm *RoomManager) RoomManager() {
 	rm.Mu = new(sync.RWMutex)
 	rm.M = make(map[interface{}]RoomI)
 	rm.BRun = false
+}
+
+//初始化
+func (rm *RoomManager) Init() {
+
 }
 
 //跑起来

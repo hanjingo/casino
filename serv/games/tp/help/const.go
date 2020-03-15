@@ -13,7 +13,7 @@ var Config *TpConfig //配置
 
 var log = *logger.GetDefaultLogger() //使用默认的日志
 
-//房间状态
+//桌子游戏状态
 const (
 	GAMING_STATUS_UNKNOW uint32 = 0 //未知状态
 

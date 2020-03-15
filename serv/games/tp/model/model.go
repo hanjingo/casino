@@ -158,13 +158,13 @@ type ReturnSeatNtf struct {
 
 //发牌通知
 type PutCardNtf struct {
-	SeatIds []int64 //座位id集合
+	SeatIds []int //座位id集合
 }
 
 //总结算广播
 type TotalSettleNtf struct {
 	RoomId int64 //房间id
-	TotalTurn int32 //总回合数
+	TotalTurn int //总回合数
 	RoomCreateTime string //房间创建时间
 	Players *PlayerTotalSettleInfo //玩家结算信息
 }
@@ -172,7 +172,7 @@ type TotalSettleNtf struct {
 //回合结算广播
 type TurnSettleNtf struct {
 	RoomId int64 //房间id
-	TotalTurn int32 //回合数
+	TotalTurn int //回合数
 	RoomCreateTime string //房间创建时间
 	Players *PlayerTurnSettleInfo //玩家结算信息
 }
@@ -180,13 +180,13 @@ type TurnSettleNtf struct {
 //回合结束广播
 type TurnEndNtf struct {
 	RoomId int64 //房间id
-	TurnNum int32 //当前回合
+	TurnNum int //当前回合
 }
 
 //回合开始广播
 type TurnStartNtf struct {
-	TurnNum int32 //当前回合
-	TotalTurn int32 //总回合
+	TurnNum int //当前回合
+	TotalTurn int //总回合
 }
 
 //掉线广播
@@ -196,13 +196,13 @@ type OffLineNtf struct {
 
 //亮牌广播
 type ShowCardNtf struct {
-	SeatNum int32 //座位id
-	Cards []int32 //牌集合
+	SeatNum int //座位id
+	Cards []int //牌集合
 }
 
 //准备倒计时刷新
 type UpdateReadyTimerNtf struct {
-	TimeLeft int32 //倒计时剩余
+	TimeLeft int //倒计时剩余
 }
 
 //准备倒计时结束
@@ -211,7 +211,7 @@ type ReadyTimerCountDoneNtf struct {
 
 //回合结算倒计时刷新
 type UpdateTurnSettleTimerNtf struct {
-	TimeLeft int32 //倒计时剩余
+	TimeLeft int //倒计时剩余
 }
 
 //回合结算倒计时结束
@@ -220,7 +220,7 @@ type TurnSettleTimerCountDoneNtf struct {
 
 //发牌倒计时刷新
 type UpdatePutCardTimerNtf struct {
-	TimeLeft int32 //倒计时剩余
+	TimeLeft int //倒计时剩余
 }
 
 //发牌倒计时结束
@@ -229,7 +229,7 @@ type PutCardTimerCountDoneNtf struct {
 
 //玩家操作倒计时刷新
 type UpdatePlayerOpTimerNtf struct {
-	TimeLeft int32 //倒计时剩余
+	TimeLeft int //倒计时剩余
 }
 
 //玩家操作倒计时结束

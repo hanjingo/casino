@@ -11,9 +11,9 @@
             "Fields":[
                 ["房间id", "Id", "int64"],
                 ["房间状态", "Status", "int64"],
-                ["游戏id", "GameId", "int32"],
-                ["最大人数限制", "MaxPlayerNum", "int32"],
-                ["总回合数", "TotalTurn", "int32"],
+                ["游戏id", "GameId", "int"],
+                ["最大人数限制", "MaxPlayerNum", "int"],
+                ["总回合数", "TotalTurn", "int"],
                 ["筹码方案id", "ChipProjId", "uint32"]
             ]
         },
@@ -27,7 +27,7 @@
                 ["玩家状态", "Status", "uint32"],
                 ["座位号", "SeatNum", "uint32"],
                 ["名字", "Name", "string"],
-                ["分数", "Score", "int32"],
+                ["分数", "Score", "int"],
                 ["头像", "HeadImgUrl", "string"]
             ]
         },
@@ -41,7 +41,7 @@
                 ["头像", "HeadImgUrl", "string"],
                 ["用户名", "UserName", "string"],
                 ["标签", "Tag", "string"],
-                ["分数变更", "ChangeScore", "int32"]
+                ["分数变更", "ChangeScore", "int"]
             ]
         },
         {
@@ -53,7 +53,7 @@
                 ["用户id", "UserId", "int64"],
                 ["用户名", "UserName", "string"],
                 ["头像", "HeadImgUrl", "string"],
-                ["分数变更", "ChangeScore", "int32"],
+                ["分数变更", "ChangeScore", "int"],
                 ["是否是赢家", "IsWinner", "bool"],
                 ["牌集合", "Cards", "array", "int"]
             ]
@@ -276,7 +276,7 @@
             "Name":"PutCardNtf",
             "Desc":"发牌通知",
             "Fields":[
-                ["座位id集合", "SeatIds", "Array", "int64"]
+                ["座位id集合", "SeatIds", "Array", "int"]
             ]
         },
         {
@@ -284,7 +284,7 @@
             "Desc":"总结算广播",
             "Fields":[
                 ["房间id", "RoomId", "int64"],
-                ["总回合数", "TotalTurn", "int32"],
+                ["总回合数", "TotalTurn", "int"],
                 ["房间创建时间", "RoomCreateTime", "string"],
                 ["玩家结算信息", "Players", "*", "PlayerTotalSettleInfo"]
             ]
@@ -294,7 +294,7 @@
             "Desc":"回合结算广播",
             "Fields":[
                 ["房间id", "RoomId", "int64"],
-                ["回合数", "TotalTurn", "int32"],
+                ["回合数", "TotalTurn", "int"],
                 ["房间创建时间", "RoomCreateTime", "string"],
                 ["玩家结算信息", "Players", "*", "PlayerTurnSettleInfo"]
             ]
@@ -304,15 +304,15 @@
             "Desc":"回合结束广播",
             "Fields":[
                 ["房间id", "RoomId", "int64"],
-                ["当前回合", "TurnNum", "int32"]
+                ["当前回合", "TurnNum", "int"]
             ]
         },
         {
             "Name":"TurnStartNtf",
             "Desc":"回合开始广播",
             "Fields":[
-                ["当前回合", "TurnNum", "int32"],
-                ["总回合", "TotalTurn", "int32"]
+                ["当前回合", "TurnNum", "int"],
+                ["总回合", "TotalTurn", "int"]
             ]
         },
         {
@@ -326,8 +326,8 @@
             "Name":"ShowCardNtf",
             "Desc":"亮牌广播",
             "Fields":[
-                ["座位id", "SeatNum", "int32"],
-                ["牌集合", "Cards", "[]int32"]
+                ["座位id", "SeatNum", "int"],
+                ["牌集合", "Cards", "[]int"]
             ]
         },
         {
@@ -335,7 +335,7 @@
             "Desc":"准备倒计时刷新",
             "Id":1200,
             "Fields":[
-                ["倒计时剩余", "TimeLeft", "int32"]
+                ["倒计时剩余", "TimeLeft", "int"]
             ]
         },
         {
@@ -347,7 +347,7 @@
             "Name":"UpdateTurnSettleTimerNtf",
             "Desc":"回合结算倒计时刷新",
             "Fields":[
-                ["倒计时剩余", "TimeLeft", "int32"]
+                ["倒计时剩余", "TimeLeft", "int"]
             ]
         },
         {
@@ -359,7 +359,7 @@
             "Name":"UpdatePutCardTimerNtf",
             "Desc":"发牌倒计时刷新",
             "Fields":[
-                ["倒计时剩余", "TimeLeft", "int32"]
+                ["倒计时剩余", "TimeLeft", "int"]
             ]
         },
         {
@@ -371,7 +371,7 @@
             "Name":"UpdatePlayerOpTimerNtf",
             "Desc":"玩家操作倒计时刷新",
             "Fields":[
-                ["倒计时剩余", "TimeLeft", "int32"]
+                ["倒计时剩余", "TimeLeft", "int"]
             ]
         },
         {

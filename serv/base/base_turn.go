@@ -8,6 +8,11 @@ type Turn struct {
 	EndTime    time.Time //结束时间
 }
 
+//构造函数
+func (turn *Turn) Turn() {
+	turn.TurnNum = 0
+}
+
 //回合开始
 func (turn *Turn) Start() {
 	turn.CreateTime = time.Now()

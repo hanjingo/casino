@@ -17,11 +17,16 @@ type PlayerManager struct {
 	BRun bool
 }
 
-//初始化
-func (pm *PlayerManager) Init() {
+//构造函数
+func (pm *PlayerManager) PlayerManager() {
 	pm.Mu = new(sync.Mutex)
 	pm.M = make(map[interface{}]PlayerI)
 	pm.BRun = false
+}
+
+//初始化
+func (pm *PlayerManager) Init() {
+
 }
 
 //维护

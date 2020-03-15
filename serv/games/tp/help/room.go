@@ -1,15 +1,14 @@
 package help
 
 import (
-	"github.com/hanjingo/algorithm/steper"
 	"github.com/hanjingo/casino/serv/base"
 )
 
 type Room struct {
 	base.Room
-	Round      *steper.Round //计步器
-	GameStatus uint32        //游戏状态
-	
+	Players map[int64]*Player //玩家集合
+	Tables  map[int]*Table    //桌子集合
+	Turns   map[uint64]*Turn  //回合集合
 }
 
 //初始化

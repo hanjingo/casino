@@ -13,10 +13,10 @@ type Session struct {
 	Id   uint64
 }
 
-func NewSession(cli *v1.GateCli) *Session {
-	return &Session{
-		Gate: cli,
-	}
+func NewSession() *Session {
+	back := &Session{}
+	back.Gate = v1.NewGateCli()
+	return back
 }
 
 func (session *Session) Bind(id uint64) {

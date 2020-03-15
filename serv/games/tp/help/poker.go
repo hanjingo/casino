@@ -36,6 +36,19 @@ func NewPokerSuit() *PokerSuit {
 	return &PokerSuit{}
 }
 
+//拿牌
+func (ps *PokerSuit) PopCard(n int) []*Poker {
+	if ps.Cards == nil || len(ps.Cards) < n {
+		return nil
+	}
+	var back []*Poker
+	for i := n; i > 0; i-- {
+		back = append(back, ps.Cards[0])
+		ps.Cards = ps.Cards[1:]
+	}
+	return back
+}
+
 //洗下牌
 func (ps *PokerSuit) Shuffle() {
 	sf.Shuffle(ps.Cards)

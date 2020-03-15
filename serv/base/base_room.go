@@ -13,6 +13,15 @@ type Room struct {
 	BRun       bool      //房间是否已启动
 }
 
+//构造函数
+func (room *Room) Room() {
+	room.Id = 0
+	room.Status = 0
+	room.GameId = 0
+	room.PgId = 0
+	room.BRun = false
+}
+
 //拿id
 func (room *Room) GetId() interface{} {
 	return room.Id
@@ -44,4 +53,9 @@ func (room *Room) Settle() {
 func (room *Room) IsValid() bool {
 	// todo
 	return true
+}
+
+//广播消息
+func (table *Table) BroadCast(msg interface{}) {
+	//todo
 }
