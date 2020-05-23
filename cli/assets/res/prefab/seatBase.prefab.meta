@@ -1,7 +1,7 @@
-{
-  "ver": "1.0.0",
-  "uuid": "54aa06d4-f4a5-4366-94b9-9e14ac28a9cb",
-  "optimizationPolicy": "AUTO",
-  "asyncLoadAssets": false,
-  "subMetas": {}
-}
+fileFormatVersion: 2
+guid: 2c3118e666a764c59b5ba1208210e8b3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

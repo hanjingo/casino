@@ -1,7 +1,8 @@
-{
-  "ver": "1.0.1",
-  "uuid": "4bffee9e-b239-4354-abf1-bcab61a593fc",
-  "isSubpackage": false,
-  "subpackageName": "",
-  "subMetas": {}
-}
+fileFormatVersion: 2
+guid: 040098f79b8c5476d8c399c167012b78
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
